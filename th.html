@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>From Figma to Prototype — A Designer's Guide to Claude Code</title>
+  <title>จาก Figma สู่ Prototype — คู่มือ Claude Code สำหรับนักออกแบบ</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800;900&display=swap');
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -32,7 +32,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Noto Sans Thai', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -113,10 +113,10 @@
     }
 
     .hero h1 {
-      font-size: clamp(42px, 5.5vw, 72px);
+      font-size: clamp(36px, 5vw, 64px);
       font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
       max-width: 800px;
       margin-bottom: 28px;
     }
@@ -340,7 +340,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Noto Sans Thai', 'Inter', sans-serif;
       font-size: 13px;
       font-weight: 500;
       color: var(--text-light);
@@ -606,21 +606,21 @@
   <div class="nav-inner">
     <span class="nav-title">Designer → Prototype</span>
     <ul class="nav-links">
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#setup">Setup</a></li>
-      <li><a href="#first-app">First App</a></li>
+      <li><a href="#overview">ภาพรวม</a></li>
+      <li><a href="#setup">ติดตั้ง</a></li>
+      <li><a href="#first-app">แอปแรก</a></li>
       <li><a href="#figma">Figma → Code</a></li>
-      <li><a href="#tips">Tips</a></li>
+      <li><a href="#tips">เคล็ดลับ</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="th.html" class="lang-switch">🇹🇭 ไทย</a></li>
+      <li><a href="index.html" class="lang-switch">🇬🇧 English</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="hero-eyebrow">A guide for designers</div>
-  <h1>Turn your Figma designs into real, working prototypes</h1>
-  <p>Use Claude Code + Expo to build native iOS apps from your designs. No coding experience needed — just your Mac, your Figma file, and a conversation.</p>
+  <div class="hero-eyebrow">คู่มือสำหรับนักออกแบบ</div>
+  <h1>เปลี่ยนงานออกแบบ Figma ให้เป็น Prototype จริงที่ใช้งานได้</h1>
+  <p>ใช้ Claude Code + Expo สร้างแอป iOS จากงานออกแบบของคุณ ไม่ต้องมีประสบการณ์เขียนโค้ด — แค่มี Mac, ไฟล์ Figma, และการสนทนา</p>
 </header>
 
 <main class="content">
@@ -628,63 +628,63 @@
   <!-- ================================ -->
   <!-- OVERVIEW -->
   <!-- ================================ -->
-  <h2 id="overview">What you're building</h2>
+  <h2 id="overview">สิ่งที่คุณกำลังจะสร้าง</h2>
 
   <div class="visual-flow">
     <div class="visual-flow-item">
       <div class="icon">🎨</div>
       <div class="label">Figma</div>
-      <div class="sublabel">Your design</div>
+      <div class="sublabel">งานออกแบบของคุณ</div>
     </div>
     <div class="visual-flow-arrow">→</div>
     <div class="visual-flow-item">
       <div class="icon">💬</div>
       <div class="label">Claude Code</div>
-      <div class="sublabel">AI in your terminal</div>
+      <div class="sublabel">AI ใน Terminal</div>
     </div>
     <div class="visual-flow-arrow">→</div>
     <div class="visual-flow-item">
       <div class="icon">📱</div>
       <div class="label">iOS Simulator</div>
-      <div class="sublabel">Real prototype</div>
+      <div class="sublabel">Prototype จริง</div>
     </div>
   </div>
 
-  <p><strong>Claude Code</strong> is an AI assistant that lives in your terminal (that black window with text). You talk to it in plain English, and it writes code for you. It can also read your Figma designs directly.</p>
+  <p><strong>Claude Code</strong> คือ AI ผู้ช่วยที่อยู่ใน Terminal ของคุณ (หน้าต่างสีดำที่มีตัวหนังสือ) คุณพิมพ์คุยกับมันเป็นภาษาธรรมดา แล้วมันจะเขียนโค้ดให้คุณ นอกจากนี้มันยังอ่านงานออกแบบ Figma ของคุณได้โดยตรง</p>
 
-  <p><strong>Expo</strong> is a tool that turns code into native iOS apps. You won't need to write the code yourself — Claude does that. You just tell it what you want.</p>
+  <p><strong>Expo</strong> คือเครื่องมือที่แปลงโค้ดเป็นแอป iOS จริง คุณไม่ต้องเขียนโค้ดเอง — Claude จะทำให้ คุณแค่บอกว่าต้องการอะไร</p>
 
-  <p>By the end of this guide you'll have a real iOS prototype running on the iPhone simulator on your Mac.</p>
+  <p>เมื่อทำตามคู่มือนี้จบ คุณจะมี Prototype iOS จริงที่ทำงานบน iPhone Simulator บน Mac ของคุณ</p>
 
   <!-- ================================ -->
   <!-- SETUP -->
   <!-- ================================ -->
-  <h2 id="setup">One-time setup</h2>
+  <h2 id="setup">ติดตั้งครั้งเดียว</h2>
 
-  <p>This section only needs to be done once. After that, creating new prototypes is fast.</p>
+  <p>ส่วนนี้ทำแค่ครั้งเดียว หลังจากนี้การสร้าง Prototype ใหม่จะเร็วมาก</p>
 
   <!-- Step 1 -->
   <div class="step" data-step="1">
     <div class="step-header">
       <span class="step-number">1</span>
-      <h3>Install Xcode (for the iPhone simulator)</h3>
+      <h3>ติดตั้ง Xcode (สำหรับ iPhone Simulator)</h3>
     </div>
-    <p>Xcode is Apple's development tool. You need it to run the iPhone simulator. It's a large download (~12 GB), so start this first.</p>
+    <p>Xcode คือเครื่องมือพัฒนาของ Apple คุณต้องใช้มันเพื่อรัน iPhone Simulator ไฟล์มีขนาดใหญ่ (~12 GB) ควรเริ่มดาวน์โหลดก่อน</p>
 
-    <p>Open the <strong>App Store</strong> on your Mac, search for <strong>Xcode</strong>, and click <strong>Get</strong>. Wait for it to finish installing.</p>
+    <p>เปิด <strong>App Store</strong> บน Mac ค้นหา <strong>Xcode</strong> แล้วกด <strong>Get</strong> รอให้ติดตั้งเสร็จ</p>
 
-    <p>Once installed, open Xcode once and agree to the license. Then open Terminal and run:</p>
+    <p>เมื่อติดตั้งเสร็จแล้ว เปิด Xcode สักครั้งแล้วยอมรับ License จากนั้นเปิด Terminal แล้วรันคำสั่ง:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
       <code><span class="prompt">$ </span><span class="command">sudo xcode-select --install</span></code>
     </div>
 
-    <p>It will ask for your Mac password (the one you use to log in). As you type, nothing will appear on screen — that's normal. Press Enter when done.</p>
+    <p>มันจะถามรหัสผ่าน Mac ของคุณ (ที่ใช้ล็อกอิน) ขณะพิมพ์จะไม่มีอะไรขึ้นบนหน้าจอ — นั่นปกติ พิมพ์เสร็จแล้วกด Enter</p>
 
     <div class="callout callout-info">
-      <span class="callout-label">What's the Terminal?</span>
-      Open Spotlight (Cmd + Space), type <strong>Terminal</strong>, and press Enter. It's a text-based way to talk to your Mac. You'll paste commands into it. If you already use <strong>iTerm2</strong> or <strong>Ghostty</strong>, those work just as well — use whichever you prefer.
+      <span class="callout-label">Terminal คืออะไร?</span>
+      เปิด Spotlight (Cmd + Space) พิมพ์ <strong>Terminal</strong> แล้วกด Enter มันคือวิธีสั่งงาน Mac ผ่านข้อความ คุณจะวางคำสั่งลงไปในนี้ ถ้าคุณใช้ <strong>iTerm2</strong> หรือ <strong>Ghostty</strong> อยู่แล้ว ก็ใช้ได้เหมือนกัน — ใช้ตัวไหนก็ได้ที่ถนัด
     </div>
   </div>
 
@@ -692,20 +692,20 @@
   <div class="step" data-step="2">
     <div class="step-header">
       <span class="step-number">2</span>
-      <h3>Install Homebrew</h3>
+      <h3>ติดตั้ง Homebrew</h3>
     </div>
-    <p>Homebrew is like an app store for developer tools, but it runs in the terminal. You'll use it to install everything else.</p>
+    <p>Homebrew เหมือน App Store สำหรับเครื่องมือนักพัฒนา แต่ทำงานใน Terminal คุณจะใช้มันติดตั้งของที่เหลือทั้งหมด</p>
 
     <div class="code-block">
-      <span class="code-label">Terminal — paste this entire line</span>
+      <span class="code-label">Terminal — วางบรรทัดนี้ทั้งหมด</span>
       <code><span class="prompt">$ </span><span class="command">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></code>
     </div>
 
-    <p>Follow the instructions it prints. At the end it may say <strong>"Next steps"</strong> — run those commands too.</p>
+    <p>ทำตามคำแนะนำที่แสดง ตอนท้ายอาจมีข้อความ <strong>"Next steps"</strong> — ให้รันคำสั่งเหล่านั้นด้วย</p>
 
     <div class="callout callout-warning">
-      <span class="callout-label">Already have Homebrew?</span>
-      If you've done development work before, you might already have it. Run <code>brew --version</code> — if it prints a version number, skip this step.
+      <span class="callout-label">มี Homebrew อยู่แล้ว?</span>
+      ถ้าเคยทำงานพัฒนามาก่อน อาจมีอยู่แล้ว ลองรัน <code>brew --version</code> — ถ้าแสดงเลขเวอร์ชัน ข้ามขั้นตอนนี้ได้เลย
     </div>
   </div>
 
@@ -713,21 +713,21 @@
   <div class="step" data-step="3">
     <div class="step-header">
       <span class="step-number">3</span>
-      <h3>Install Node.js</h3>
+      <h3>ติดตั้ง Node.js</h3>
     </div>
-    <p>Node.js runs the JavaScript that powers your app. Install it with Homebrew:</p>
+    <p>Node.js ใช้รัน JavaScript ที่ขับเคลื่อนแอปของคุณ ติดตั้งด้วย Homebrew:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
       <code><span class="prompt">$ </span><span class="command">brew install node</span></code>
     </div>
 
-    <p>Verify it works:</p>
+    <p>ตรวจสอบว่าใช้ได้:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
       <code><span class="prompt">$ </span><span class="command">node --version</span>
-<span class="comment"># Should print something like v22.x.x</span></code>
+<span class="comment"># ควรแสดงอะไรประมาณ v22.x.x</span></code>
     </div>
   </div>
 
@@ -735,27 +735,27 @@
   <div class="step" data-step="4">
     <div class="step-header">
       <span class="step-number">4</span>
-      <h3>Install Claude Code</h3>
+      <h3>ติดตั้ง Claude Code</h3>
     </div>
-    <p>This installs the AI assistant you'll be talking to. Run this single command:</p>
+    <p>ติดตั้ง AI ผู้ช่วยที่คุณจะคุยด้วย รันคำสั่งนี้:</p>
 
     <div class="code-block">
-      <span class="code-label">Terminal — paste this entire line</span>
+      <span class="code-label">Terminal — วางบรรทัดนี้ทั้งหมด</span>
       <code><span class="prompt">$ </span><span class="command">curl -fsSL https://claude.ai/install.sh | bash</span></code>
     </div>
 
-    <p>Verify it works:</p>
+    <p>ตรวจสอบว่าใช้ได้:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
       <code><span class="prompt">$ </span><span class="command">claude --version</span></code>
     </div>
 
-    <p>The first time you run Claude, it will ask you to log in to your Anthropic account. Follow the prompts — it will open a browser window.</p>
+    <p>ครั้งแรกที่รัน Claude มันจะขอให้คุณล็อกอินบัญชี Anthropic ทำตามขั้นตอน — มันจะเปิดหน้าเว็บในเบราว์เซอร์</p>
 
     <div class="callout callout-info">
-      <span class="callout-label">Automatic updates</span>
-      Claude Code updates itself automatically in the background, so you'll always have the latest version. No need to run any update commands.
+      <span class="callout-label">อัปเดตอัตโนมัติ</span>
+      Claude Code อัปเดตตัวเองอัตโนมัติในพื้นหลัง คุณจะได้ใช้เวอร์ชันล่าสุดเสมอ ไม่ต้องรันคำสั่งอัปเดตเอง
     </div>
   </div>
 
@@ -763,18 +763,18 @@
   <div class="step" data-step="5">
     <div class="step-header">
       <span class="step-number">5</span>
-      <h3>Install iOS simulator tools</h3>
+      <h3>ติดตั้งเครื่องมือ iOS Simulator</h3>
     </div>
-    <p>Open Xcode, then go to <strong>Xcode → Settings → Platforms</strong> and make sure an <strong>iOS Simulator</strong> runtime is downloaded (e.g. iOS 18.x).</p>
+    <p>เปิด Xcode แล้วไปที่ <strong>Xcode → Settings → Platforms</strong> ตรวจสอบว่าดาวน์โหลด <strong>iOS Simulator</strong> runtime แล้ว (เช่น iOS 18.x)</p>
 
-    <p>You can verify the simulator works by running:</p>
+    <p>ตรวจสอบว่า Simulator ใช้ได้โดยรัน:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
       <code><span class="prompt">$ </span><span class="command">open -a Simulator</span></code>
     </div>
 
-    <p>An iPhone should appear on your screen. You can close it for now.</p>
+    <p>iPhone ควรปรากฏบนหน้าจอ ปิดไว้ก่อนได้</p>
   </div>
 
   <!-- ================================ -->
@@ -782,29 +782,29 @@
   <!-- ================================ -->
   <div class="breather">
     <div class="breather-emoji">&#127881;</div>
-    <h3 class="breather-title">You just set up a dev environment.</h3>
-    <p class="breather-text">Seriously — that's something most designers never do. Take a breath, grab a coffee, feel smug. The boring part is over. Everything from here is the fun part.</p>
+    <h3 class="breather-title">คุณเพิ่งเซ็ตอัป Dev Environment เสร็จแล้ว!</h3>
+    <p class="breather-text">จริงๆ นะ — นี่คือสิ่งที่นักออกแบบส่วนใหญ่ไม่เคยทำ พักหายใจ ไปชงกาแฟสักแก้ว แล้วภูมิใจในตัวเองได้เลย ส่วนที่น่าเบื่อจบแล้ว ต่อจากนี้คือส่วนสนุก!</p>
   </div>
 
   <!-- ================================ -->
   <!-- FIRST APP -->
   <!-- ================================ -->
-  <h2 id="first-app">Creating your first prototype</h2>
+  <h2 id="first-app">สร้าง Prototype แรกของคุณ</h2>
 
   <!-- Step 6 -->
   <div class="step" data-step="6">
     <div class="step-header">
       <span class="step-number">6</span>
-      <h3>Create a project folder</h3>
+      <h3>สร้างโฟลเดอร์โปรเจกต์</h3>
     </div>
-    <p>Think of this as creating a new folder for your project, just like you would in Finder. Run these commands one at a time:</p>
+    <p>คิดว่าเหมือนสร้างโฟลเดอร์ใหม่ใน Finder รันคำสั่งเหล่านี้ทีละบรรทัด:</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
-      <code><span class="comment"># Create a folder for all your prototypes</span>
+      <code><span class="comment"># สร้างโฟลเดอร์สำหรับ Prototype ทั้งหมด</span>
 <span class="prompt">$ </span><span class="command">mkdir -p ~/Prototypes</span>
 
-<span class="comment"># Go into that folder</span>
+<span class="comment"># เข้าไปในโฟลเดอร์นั้น</span>
 <span class="prompt">$ </span><span class="command">cd ~/Prototypes</span></code>
     </div>
   </div>
@@ -813,9 +813,9 @@
   <div class="step" data-step="7">
     <div class="step-header">
       <span class="step-number">7</span>
-      <h3>Start Claude Code</h3>
+      <h3>เริ่ม Claude Code</h3>
     </div>
-    <p>Now launch Claude. The special flag lets Claude run commands on its own without asking you for permission each time — this makes the experience much smoother.</p>
+    <p>เปิด Claude ตัว flag พิเศษนี้จะให้ Claude รันคำสั่งเองได้โดยไม่ต้องขออนุญาตทุกครั้ง — ทำให้ใช้งานลื่นขึ้นมาก</p>
 
     <div class="code-block">
       <span class="code-label">Terminal</span>
@@ -823,23 +823,23 @@
     </div>
 
     <div class="callout callout-warning">
-      <span class="callout-label">About that scary flag name</span>
-      The <code>--dangerously-skip-permissions</code> flag just means Claude can run terminal commands without asking you each time. It's safe for prototyping. Anthropic named it that way to make sure people only use it intentionally.
+      <span class="callout-label">เกี่ยวกับชื่อ flag ที่ดูน่ากลัว</span>
+      <code>--dangerously-skip-permissions</code> แค่หมายความว่า Claude สามารถรันคำสั่ง Terminal ได้โดยไม่ต้องถามทุกครั้ง ปลอดภัยสำหรับการทำ Prototype Anthropic ตั้งชื่อแบบนี้เพื่อให้แน่ใจว่าคนใช้ตั้งใจเปิดจริงๆ
     </div>
 
-    <p>You should now see a prompt where you can type messages to Claude. This is your new workspace — you talk, Claude codes.</p>
+    <p>ตอนนี้คุณจะเห็นช่องให้พิมพ์ข้อความถึง Claude นี่คือพื้นที่ทำงานใหม่ของคุณ — คุณพูด Claude เขียนโค้ด</p>
   </div>
 
   <!-- Step 8 -->
   <div class="step" data-step="8">
     <div class="step-header">
       <span class="step-number">8</span>
-      <h3>Tell Claude to create an Expo app</h3>
+      <h3>บอก Claude ให้สร้างแอป Expo</h3>
     </div>
-    <p>Now just talk to Claude in plain English. Type something like this:</p>
+    <p>แค่คุยกับ Claude เป็นภาษาธรรมดา พิมพ์อะไรประมาณนี้:</p>
 
     <div class="code-block">
-      <span class="code-label">You → Claude</span>
+      <span class="code-label">คุณ → Claude</span>
       <code>Create a new Expo app called "my-prototype" with TypeScript.
 Set it up for iOS only. Use Expo Router for navigation.
 
@@ -852,45 +852,45 @@ Then run it in the iOS simulator so I can see it.</code>
     </div>
 
     <div class="callout callout-info">
-      <span class="callout-label">Why "mock" and "no backend"?</span>
-      A real app talks to servers to fetch data. For a prototype, you don't need that — Claude will generate realistic fake data that lives right inside the app. Everything runs locally, nothing needs the internet, and you won't need to set up any servers or databases.
+      <span class="callout-label">ทำไมต้อง "mock" และ "no backend"?</span>
+      แอปจริงจะคุยกับเซิร์ฟเวอร์เพื่อดึงข้อมูล สำหรับ Prototype ไม่ต้องทำแบบนั้น — Claude จะสร้างข้อมูลปลอมที่ดูสมจริงอยู่ในตัวแอปเลย ทุกอย่างทำงานในเครื่อง ไม่ต้องใช้อินเทอร์เน็ต และไม่ต้องตั้งเซิร์ฟเวอร์หรือฐานข้อมูลใดๆ
     </div>
 
-    <p>Claude will:</p>
+    <p>Claude จะ:</p>
     <ul class="checklist">
-      <li>Create the project with all the right settings</li>
-      <li>Install dependencies</li>
-      <li>Configure it for iOS</li>
-      <li>Launch the iOS simulator with your app running</li>
+      <li>สร้างโปรเจกต์พร้อมการตั้งค่าที่ถูกต้อง</li>
+      <li>ติดตั้ง Dependencies</li>
+      <li>ตั้งค่าสำหรับ iOS</li>
+      <li>เปิด iOS Simulator พร้อมแอปของคุณ</li>
     </ul>
 
-    <p>This takes a few minutes the first time. You'll see an iPhone simulator pop up with your app.</p>
+    <p>ครั้งแรกจะใช้เวลาสักครู่ คุณจะเห็น iPhone Simulator โผล่ขึ้นมาพร้อมแอปของคุณ</p>
 
     <div class="callout callout-success">
-      <span class="callout-label">You just built an app</span>
-      If you can see something on the simulator, congratulations — you have a running iOS app. Everything from here is just making it look like your design.
+      <span class="callout-label">คุณเพิ่งสร้างแอปได้แล้ว!</span>
+      ถ้าเห็นอะไรบน Simulator ยินดีด้วย — คุณมีแอป iOS ที่ทำงานจริงแล้ว ต่อจากนี้แค่ทำให้มันดูเหมือนงานออกแบบของคุณ
     </div>
   </div>
 
   <!-- ================================ -->
   <!-- FIGMA TO CODE -->
   <!-- ================================ -->
-  <h2 id="figma">Turning your Figma designs into screens</h2>
+  <h2 id="figma">เปลี่ยนงานออกแบบ Figma เป็นหน้าจอ</h2>
 
   <!-- Step 9 -->
   <div class="step" data-step="9">
     <div class="step-header">
       <span class="step-number">9</span>
-      <h3>Connect Claude to Figma</h3>
+      <h3>เชื่อมต่อ Claude กับ Figma</h3>
     </div>
-    <p>Claude can read your Figma files directly. Here's how to set it up:</p>
+    <p>Claude อ่านไฟล์ Figma ของคุณได้โดยตรง ทำแบบนี้:</p>
 
-    <p><strong>a)</strong> In Figma, open the file with your designs. Right-click the frame you want to build and choose <strong>Copy link</strong>.</p>
+    <p><strong>a)</strong> ใน Figma เปิดไฟล์ที่มีงานออกแบบ คลิกขวาที่ Frame ที่ต้องการสร้าง แล้วเลือก <strong>Copy link</strong></p>
 
-    <p><strong>b)</strong> Go back to Claude and type something like:</p>
+    <p><strong>b)</strong> กลับไปที่ Claude แล้วพิมพ์อะไรประมาณนี้:</p>
 
     <div class="code-block">
-      <span class="code-label">You → Claude</span>
+      <span class="code-label">คุณ → Claude</span>
       <code>Here's my Figma design for the home screen:
 https://www.figma.com/design/ABC123/My-App?node-id=1-234
 
@@ -901,124 +901,124 @@ keep everything local and working offline.</code>
     </div>
 
     <div class="callout callout-info">
-      <span class="callout-label">First-time Figma connection</span>
-      The first time you give Claude a Figma link, it will ask you to authenticate with Figma. Follow the prompts in the browser to authorize the connection. You only need to do this once.
+      <span class="callout-label">เชื่อมต่อ Figma ครั้งแรก</span>
+      ครั้งแรกที่ให้ลิงก์ Figma กับ Claude มันจะขอให้คุณยืนยันตัวตนกับ Figma ทำตามขั้นตอนในเบราว์เซอร์เพื่ออนุญาตการเชื่อมต่อ ต้องทำแค่ครั้งเดียว
     </div>
 
-    <p>Claude will look at the Figma design, understand the layout, and write the React Native code to match it. The iOS simulator will automatically reload with the new screen.</p>
+    <p>Claude จะดูงานออกแบบ Figma เข้าใจ Layout และเขียนโค้ด React Native ให้ตรงกัน iOS Simulator จะรีโหลดอัตโนมัติพร้อมหน้าจอใหม่</p>
   </div>
 
   <!-- Step 10 -->
   <div class="step" data-step="10">
     <div class="step-header">
       <span class="step-number">10</span>
-      <h3>Iterate on the design</h3>
+      <h3>ปรับแต่งงานออกแบบ</h3>
     </div>
-    <p>Here's where it gets fun. Just keep talking to Claude:</p>
+    <p>ตรงนี้แหละที่สนุก แค่คุยกับ Claude ต่อ:</p>
 
     <div class="code-block">
-      <span class="code-label">Example conversations</span>
-      <code><span class="comment"># Adjust the design</span>
+      <span class="code-label">ตัวอย่างการสนทนา</span>
+      <code><span class="comment"># ปรับแต่งดีไซน์</span>
 <span class="string">"The header should be sticky when scrolling"</span>
 
-<span class="comment"># Add a new screen</span>
+<span class="comment"># เพิ่มหน้าจอใหม่</span>
 <span class="string">"Now build the profile screen from this Figma frame:
 https://www.figma.com/design/ABC123/My-App?node-id=5-678"</span>
 
-<span class="comment"># Add navigation between screens</span>
+<span class="comment"># เพิ่มการนำทางระหว่างหน้าจอ</span>
 <span class="string">"When I tap the profile icon in the tab bar, navigate to
 the profile screen"</span>
 
-<span class="comment"># Add interactions</span>
+<span class="comment"># เพิ่ม Interaction</span>
 <span class="string">"Add a pull-to-refresh animation on the feed screen"</span>
 
-<span class="comment"># Fix something</span>
+<span class="comment"># แก้ไขอะไรบางอย่าง</span>
 <span class="string">"The spacing between the cards is too tight, add more
 breathing room"</span></code>
     </div>
 
-    <p>Each time, Claude will update the code and the simulator will refresh automatically. It's like having a conversation with a developer sitting next to you.</p>
+    <p>ทุกครั้งที่สั่ง Claude จะอัปเดตโค้ดแล้ว Simulator จะรีเฟรชอัตโนมัติ เหมือนมี Developer นั่งอยู่ข้างๆ คุณ</p>
   </div>
 
   <!-- ================================ -->
   <!-- TIPS -->
   <!-- ================================ -->
-  <h2 id="tips">Tips for great results</h2>
+  <h2 id="tips">เคล็ดลับเพื่อผลลัพธ์ที่ดี</h2>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">→</span>
-      <h3>Be specific about what you want</h3>
+      <h3>บอกให้ชัดเจนว่าต้องการอะไร</h3>
     </div>
-    <p>Instead of <em>"make it look better"</em>, try <em>"increase the padding around the card to 24px and change the title to 20px semibold."</em> The more precise you are, the better Claude can match your intent.</p>
+    <p>แทนที่จะบอกว่า <em>"make it look better"</em> ลองบอกว่า <em>"increase the padding around the card to 24px and change the title to 20px semibold"</em> ยิ่งบอกชัดเจน Claude ยิ่งทำได้ตรงใจ</p>
   </div>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">→</span>
-      <h3>Work screen by screen</h3>
+      <h3>ทำทีละหน้าจอ</h3>
     </div>
-    <p>Don't try to build the entire app at once. Start with one screen, get it right, then move to the next. This gives Claude better context and produces better results.</p>
+    <p>อย่าพยายามสร้างทั้งแอปในคราวเดียว เริ่มจากหน้าจอเดียว ทำให้ถูกใจ แล้วค่อยไปหน้าถัดไป วิธีนี้ให้ Context กับ Claude ได้ดีกว่าและผลลัพธ์จะดีกว่า</p>
   </div>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">→</span>
-      <h3>Share individual frames from Figma</h3>
+      <h3>แชร์ Frame แต่ละอันจาก Figma</h3>
     </div>
-    <p>When you copy a Figma link, make sure you've selected a specific frame (like a single screen), not the entire page. This helps Claude focus on exactly what you want.</p>
+    <p>เวลา Copy ลิงก์ Figma ให้เลือก Frame เฉพาะ (เช่น หน้าจอเดียว) ไม่ใช่ทั้งหน้า จะช่วยให้ Claude โฟกัสได้ตรงจุดที่ต้องการ</p>
   </div>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">→</span>
-      <h3>Use design vocabulary</h3>
+      <h3>ใช้ศัพท์ดีไซน์ได้เลย</h3>
     </div>
-    <p>Claude understands design language. Feel free to say things like <em>"add a bottom sheet"</em>, <em>"use a skeleton loader"</em>, <em>"make this a horizontal scroll with snap points"</em>, or <em>"add a parallax effect to the hero image"</em>.</p>
+    <p>Claude เข้าใจภาษาดีไซน์ พูดอะไรแบบ <em>"add a bottom sheet"</em>, <em>"use a skeleton loader"</em>, <em>"make this a horizontal scroll with snap points"</em> หรือ <em>"add a parallax effect to the hero image"</em> ได้เลย</p>
   </div>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">→</span>
-      <h3>Ask Claude to start over if needed</h3>
+      <h3>บอก Claude ให้เริ่มใหม่ได้</h3>
     </div>
-    <p>If a screen isn't working out, it's totally fine to say <em>"let's scrap the profile screen and rebuild it from scratch."</em> Claude won't mind.</p>
+    <p>ถ้าหน้าจอไหนไม่ถูกใจ บอกได้เลยว่า <em>"let's scrap the profile screen and rebuild it from scratch"</em> Claude ไม่ว่าหรอก</p>
   </div>
 
   <!-- ================================ -->
   <!-- EVERYDAY COMMANDS -->
   <!-- ================================ -->
-  <h2>Everyday reference</h2>
+  <h2>ใช้งานประจำวัน</h2>
 
   <div class="step">
     <div class="step-header">
       <span class="step-number">📋</span>
-      <h3>Commands you'll actually use</h3>
+      <h3>คำสั่งที่จะใช้จริงๆ</h3>
     </div>
 
     <div class="code-block">
-      <span class="code-label">Starting a session (every time)</span>
-      <code><span class="comment"># Navigate to your project</span>
+      <span class="code-label">เริ่มทำงาน (ทุกครั้ง)</span>
+      <code><span class="comment"># ไปที่โปรเจกต์ของคุณ</span>
 <span class="prompt">$ </span><span class="command">cd ~/Prototypes/my-prototype</span>
 
-<span class="comment"># Start Claude</span>
+<span class="comment"># เริ่ม Claude</span>
 <span class="prompt">$ </span><span class="command">claude --dangerously-skip-permissions</span>
 
-<span class="comment"># Tell Claude to start the app</span>
+<span class="comment"># บอก Claude ให้เริ่มแอป</span>
 <span class="string">"Start the app in the iOS simulator"</span></code>
     </div>
 
     <div class="code-block">
-      <span class="code-label">If the simulator isn't running</span>
+      <span class="code-label">ถ้า Simulator ไม่ทำงาน</span>
       <code><span class="prompt">$ </span><span class="command">open -a Simulator</span></code>
     </div>
 
     <div class="code-block">
-      <span class="code-label">If something breaks</span>
-      <code><span class="comment"># Just tell Claude</span>
-<span class="string">"The app is showing an error. Here's what I see: [describe it]"</span>
+      <span class="code-label">ถ้ามีปัญหา</span>
+      <code><span class="comment"># แค่บอก Claude</span>
+<span class="string">"The app is showing an error. Here's what I see: [อธิบายสิ่งที่เห็น]"</span>
 
-<span class="comment"># Or if you want to start completely fresh</span>
+<span class="comment"># หรือถ้าอยากเริ่มใหม่ทั้งหมด</span>
 <span class="string">"Stop the app, clear the cache, and restart it"</span></code>
     </div>
   </div>
@@ -1026,52 +1026,52 @@ breathing room"</span></code>
   <!-- ================================ -->
   <!-- FAQ -->
   <!-- ================================ -->
-  <h2 id="faq">Common questions</h2>
+  <h2 id="faq">คำถามที่พบบ่อย</h2>
 
   <details>
-    <summary>Do I need to know how to code?</summary>
-    <p>No. Claude writes all the code. You describe what you want in plain English and reference your Figma designs. Think of it like directing a developer — you provide the vision, Claude handles the implementation.</p>
+    <summary>ต้องเขียนโค้ดเป็นไหม?</summary>
+    <p>ไม่ต้อง Claude เขียนโค้ดทั้งหมด คุณแค่อธิบายสิ่งที่ต้องการเป็นภาษาธรรมดาและอ้างอิงงานออกแบบ Figma คิดว่าเหมือนกำกับ Developer — คุณให้วิสัยทัศน์ Claude จัดการ Implementation</p>
   </details>
 
   <details>
-    <summary>How close will it match my Figma design?</summary>
-    <p>Very close for layout, colors, typography, and spacing. Complex animations or custom illustrations may need some back-and-forth. The more specific your Figma link (select the exact frame), the better the match.</p>
+    <summary>จะตรงกับงานออกแบบ Figma แค่ไหน?</summary>
+    <p>ใกล้เคียงมากสำหรับ Layout, สี, Typography และ Spacing แอนิเมชันซับซ้อนหรือภาพวาดพิเศษอาจต้องปรับไปมาบ้าง ยิ่งเลือก Frame ที่เฉพาะเจาะจงจาก Figma ยิ่งตรง</p>
   </details>
 
   <details>
-    <summary>Can I test on a real iPhone?</summary>
-    <p>Yes! Ask Claude: <em>"How do I run this on my real iPhone?"</em> It will walk you through it. You'll need to connect your iPhone via USB and have an Apple Developer account (free works for testing).</p>
+    <summary>ทดสอบบน iPhone จริงได้ไหม?</summary>
+    <p>ได้! ถาม Claude ว่า: <em>"How do I run this on my real iPhone?"</em> มันจะแนะนำขั้นตอน ต้องเชื่อมต่อ iPhone ด้วย USB และมีบัญชี Apple Developer (ฟรีก็ใช้ทดสอบได้)</p>
   </details>
 
   <details>
-    <summary>What if Claude gets stuck or the app crashes?</summary>
-    <p>Just describe what you see. Say something like: <em>"The app crashed and I see a red error screen that says TypeError"</em> or <em>"The simulator is just showing a white screen."</em> Claude can usually figure it out and fix it.</p>
+    <summary>ถ้า Claude ติดหรือแอปพัง?</summary>
+    <p>แค่อธิบายสิ่งที่เห็น เช่น: <em>"The app crashed and I see a red error screen that says TypeError"</em> หรือ <em>"The simulator is just showing a white screen"</em> Claude มักจะหาทางแก้ได้</p>
   </details>
 
   <details>
-    <summary>Can I close the terminal and come back later?</summary>
-    <p>Yes. The project files stay on your Mac. Just open Terminal, <code>cd</code> into your project folder, and start Claude again. Your code is still there — Claude just starts a new conversation. You can tell it <em>"look at the existing code and tell me what screens we have so far"</em> to get back up to speed.</p>
+    <summary>ปิด Terminal แล้วกลับมาทีหลังได้ไหม?</summary>
+    <p>ได้ ไฟล์โปรเจกต์จะอยู่ใน Mac คุณ แค่เปิด Terminal, <code>cd</code> ไปที่โฟลเดอร์โปรเจกต์ แล้วเริ่ม Claude ใหม่ โค้ดยังอยู่ — Claude แค่เริ่มการสนทนาใหม่ บอกว่า <em>"look at the existing code and tell me what screens we have so far"</em> เพื่อดูว่ามีอะไรบ้าง</p>
   </details>
 
   <details>
-    <summary>Can Claude add real data or API connections?</summary>
-    <p>For prototyping, you don't need real APIs or a backend. Claude generates realistic mock data and stores everything locally on the device. If a screen shows a feed, user profiles, or messages, Claude will create convincing sample data that makes the prototype feel real. Just say <em>"use realistic sample data for the feed"</em> and it will.</p>
+    <summary>Claude เพิ่มข้อมูลจริงหรือเชื่อมต่อ API ได้ไหม?</summary>
+    <p>สำหรับ Prototyping ไม่ต้องใช้ API จริงหรือ Backend Claude จะสร้างข้อมูล Mock ที่ดูสมจริงและเก็บทุกอย่างในเครื่อง ถ้าหน้าจอแสดงฟีด, โปรไฟล์, หรือข้อความ Claude จะสร้างข้อมูลตัวอย่างที่น่าเชื่อถือ แค่บอกว่า <em>"use realistic sample data for the feed"</em> ก็พอ</p>
   </details>
 
   <details>
-    <summary>How do I share the prototype with others?</summary>
-    <p>The easiest way is a screen recording — use Cmd+Shift+5 on macOS to record the simulator. For sharing a build others can install, ask Claude about Expo's EAS Build or TestFlight.</p>
+    <summary>แชร์ Prototype ให้คนอื่นยังไง?</summary>
+    <p>วิธีง่ายสุดคืออัดหน้าจอ — ใช้ Cmd+Shift+5 บน macOS เพื่ออัด Simulator ถ้าต้องการแชร์ Build ที่คนอื่นติดตั้งได้ ถาม Claude เกี่ยวกับ EAS Build ของ Expo หรือ TestFlight</p>
   </details>
 
   <details>
-    <summary>What if I want to start a completely new prototype?</summary>
-    <p>Go back to step 6. Create a new folder inside <code>~/Prototypes/</code> and start fresh.</p>
+    <summary>ถ้าอยากเริ่ม Prototype ใหม่เลย?</summary>
+    <p>กลับไปขั้นตอนที่ 6 สร้างโฟลเดอร์ใหม่ใน <code>~/Prototypes/</code> แล้วเริ่มใหม่</p>
   </details>
 
 </main>
 
 <footer>
-  <p>Built for designers who want to prototype faster. Powered by Claude Code and Expo.</p>
+  <p>สร้างสำหรับนักออกแบบที่ต้องการทำ Prototype เร็วขึ้น ขับเคลื่อนโดย Claude Code และ Expo</p>
 </footer>
 
 <script>
@@ -1123,7 +1123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     footer.className = 'step-footer';
 
     // Slack: open native app via slack:// protocol, copy message to clipboard
-    const slackMsg = `I need help with Step ${num}: ${title}`;
+    const slackMsg = `ต้องการความช่วยเหลือขั้นตอนที่ ${num}: ${title}`;
     const slackUrl = `slack://channel?team=&id=${SLACK_CHANNEL_ID}`;
 
     footer.innerHTML = `
@@ -1132,7 +1132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="check-box">
           <svg viewBox="0 0 16 16"><path d="M3.5 8.5L6.5 11.5L12.5 4.5"/></svg>
         </span>
-        <span class="check-label">Done</span>
+        <span class="check-label">เสร็จแล้ว</span>
       </label>
       <button class="help-btn" data-slack-msg="${slackMsg}">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1140,7 +1140,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <path d="M6 6.5a2 2 0 1 1 2 2v1"/>
           <circle cx="8" cy="12" r="0.5" fill="currentColor" stroke="none"/>
         </svg>
-        I need help
+        ขอความช่วยเหลือ
       </button>
     `;
 
@@ -1167,10 +1167,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
 
         // Brief visual feedback
-        const origText = helpBtn.innerHTML;
-        helpBtn.querySelector('svg').nextSibling.textContent = ' Message copied — opening Slack…';
+        helpBtn.querySelector('svg').nextSibling.textContent = ' ก๊อปข้อความแล้ว — กำลังเปิด Slack…';
         setTimeout(() => {
-          helpBtn.querySelector('svg').nextSibling.textContent = ' I need help';
+          helpBtn.querySelector('svg').nextSibling.textContent = ' ขอความช่วยเหลือ';
         }, 3000);
       });
     });
