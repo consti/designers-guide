@@ -153,6 +153,25 @@
       padding-top: 0;
     }
 
+    /* ---- ANCHOR LINKS ---- */
+    .anchor-link {
+      color: var(--text-light);
+      text-decoration: none;
+      opacity: 0;
+      font-weight: 400;
+      margin-left: 8px;
+      transition: opacity 0.15s;
+    }
+
+    h2:hover .anchor-link,
+    .step-header:hover .anchor-link {
+      opacity: 1;
+    }
+
+    .anchor-link:hover {
+      color: var(--accent);
+    }
+
     /* ---- STEP ---- */
     .step {
       margin-top: 48px;
@@ -1169,7 +1188,7 @@ so the live page updates.</code>
   <!-- ================================ -->
   <!-- EVERYDAY COMMANDS -->
   <!-- ================================ -->
-  <h2>Everyday reference</h2>
+  <h2 id="reference">Everyday reference</h2>
 
   <div class="step">
     <div class="step-header">
@@ -1257,6 +1276,33 @@ so the live page updates.</code>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ---- ANCHOR LINKS ----
+  function slugify(text) {
+    return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  }
+
+  // Add # links to h2 headings
+  document.querySelectorAll('.content h2[id]').forEach(h2 => {
+    const link = document.createElement('a');
+    link.className = 'anchor-link';
+    link.href = '#' + h2.id;
+    link.textContent = '#';
+    h2.appendChild(link);
+  });
+
+  // Add IDs and # links to step h3 headings
+  document.querySelectorAll('.step[data-step] h3').forEach(h3 => {
+    const step = h3.closest('.step');
+    const num = step.dataset.step;
+    const id = 'step-' + num;
+    step.id = id;
+    const link = document.createElement('a');
+    link.className = 'anchor-link';
+    link.href = '#' + id;
+    link.textContent = '#';
+    h3.appendChild(link);
+  });
 
   // ---- COPY BUTTONS ----
   document.querySelectorAll('.code-block').forEach(block => {
