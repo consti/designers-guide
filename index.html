@@ -611,6 +611,7 @@
       <li><a href="#first-app">First App</a></li>
       <li><a href="#figma">Figma → Code</a></li>
       <li><a href="#tips">Tips</a></li>
+      <li><a href="#static">Static Pages</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="th.html" class="lang-switch">🇹🇭 ไทย</a></li>
     </ul>
@@ -983,6 +984,170 @@ breathing room"</span></code>
       <h3>Ask Claude to start over if needed</h3>
     </div>
     <p>If a screen isn't working out, it's totally fine to say <em>"let's scrap the profile screen and rebuild it from scratch."</em> Claude won't mind.</p>
+  </div>
+
+  <!-- ================================ -->
+  <!-- BONUS: STATIC PAGES -->
+  <!-- ================================ -->
+  <h2 id="static">Bonus: Build static pages and publish them</h2>
+
+  <p>You don't need Expo for everything. Claude can also build standalone HTML pages — landing pages, case studies, portfolios, design documentation — and publish them to the web for free using GitHub Pages. This is actually how the page you're reading right now was made.</p>
+
+  <!-- Step 11 -->
+  <div class="step" data-step="11">
+    <div class="step-header">
+      <span class="step-number">11</span>
+      <h3>Install GitHub CLI</h3>
+    </div>
+    <p>GitHub is where your page will be hosted. The CLI (command-line interface) lets Claude create repos and deploy pages for you without leaving the terminal.</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">brew install gh</span></code>
+    </div>
+
+    <p>Then log in to your GitHub account:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">gh auth login</span></code>
+    </div>
+
+    <p>It will ask you a few questions. Choose:</p>
+    <ul class="checklist">
+      <li><strong>GitHub.com</strong> (not Enterprise)</li>
+      <li><strong>HTTPS</strong> as the protocol</li>
+      <li><strong>Login with a web browser</strong> when asked how to authenticate</li>
+    </ul>
+
+    <p>Follow the prompts — it will open your browser to authorize the connection.</p>
+
+    <div class="callout callout-info">
+      <span class="callout-label">Don't have a GitHub account?</span>
+      Go to <strong>github.com</strong> and sign up for a free account first. It takes 2 minutes. You'll need it to publish your pages.
+    </div>
+  </div>
+
+  <!-- Step 12 -->
+  <div class="step" data-step="12">
+    <div class="step-header">
+      <span class="step-number">12</span>
+      <h3>Create a static page project</h3>
+    </div>
+    <p>Create a new folder and start Claude in it:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="comment"># Create a folder for your page</span>
+<span class="prompt">$ </span><span class="command">mkdir -p ~/Prototypes/my-page</span>
+<span class="prompt">$ </span><span class="command">cd ~/Prototypes/my-page</span>
+
+<span class="comment"># Start Claude</span>
+<span class="prompt">$ </span><span class="command">claude --dangerously-skip-permissions</span></code>
+    </div>
+  </div>
+
+  <!-- Step 13 -->
+  <div class="step" data-step="13">
+    <div class="step-header">
+      <span class="step-number">13</span>
+      <h3>Tell Claude what to build</h3>
+    </div>
+    <p>Describe the page you want. Claude will create a self-contained HTML file with all styles and interactions built in. Here are some ideas:</p>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude — example: portfolio page</span>
+      <code>Build a single-page portfolio site for a UI designer.
+Use a minimal, editorial style with beautiful typography.
+Include sections for: hero with name and tagline, selected
+work (use placeholder images from unsplash), about, and
+contact. Make it responsive. Everything in a single
+index.html file with inline CSS and no external dependencies.</code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude — example: case study</span>
+      <code>Build a case study page for a mobile app redesign project.
+Include: project overview, problem statement, process with
+before/after comparisons, key screens (use placeholder
+images), outcomes and metrics. Clean, professional layout.
+Single index.html file, no dependencies.</code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude — example: from Figma</span>
+      <code>Here's my Figma design for a landing page:
+https://www.figma.com/design/ABC123/Landing?node-id=1-234
+
+Build this as a static HTML page. Match the design exactly.
+Single index.html file with inline CSS. Make it responsive.
+No external dependencies.</code>
+    </div>
+
+    <p>Claude will create the HTML file. You can preview it by asking:</p>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude</span>
+      <code>Open the page in my browser so I can see it.</code>
+    </div>
+
+    <p>Keep iterating — <em>"make the hero bigger"</em>, <em>"add a dark mode toggle"</em>, <em>"change the font to something more playful"</em> — until you're happy with it.</p>
+  </div>
+
+  <!-- Step 14 -->
+  <div class="step" data-step="14">
+    <div class="step-header">
+      <span class="step-number">14</span>
+      <h3>Publish it to the web with GitHub Pages</h3>
+    </div>
+    <p>Once you're happy with the page, just tell Claude to publish it:</p>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude</span>
+      <code>Create a GitHub repository called "my-page", push this
+project to it, and set up GitHub Pages so it's live on the
+web. Give me the URL when it's done.</code>
+    </div>
+
+    <p>Claude will:</p>
+    <ul class="checklist">
+      <li>Initialize a Git repository</li>
+      <li>Create a repo on your GitHub account</li>
+      <li>Push the code</li>
+      <li>Enable GitHub Pages</li>
+      <li>Give you the live URL</li>
+    </ul>
+
+    <p>Your page will be live at <code>https://yourusername.github.io/my-page/</code> within a minute or two. Share that link with anyone.</p>
+
+    <div class="callout callout-success">
+      <span class="callout-label">Free hosting, forever</span>
+      GitHub Pages is free for public repos. Your page will stay online as long as you keep the repository. No hosting fees, no server management, no expiring links.
+    </div>
+  </div>
+
+  <!-- Step 15 -->
+  <div class="step" data-step="15">
+    <div class="step-header">
+      <span class="step-number">15</span>
+      <h3>Update your page anytime</h3>
+    </div>
+    <p>Want to make changes later? Just open the project and tell Claude what to change:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">cd ~/Prototypes/my-page</span>
+<span class="prompt">$ </span><span class="command">claude --dangerously-skip-permissions</span></code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude</span>
+      <code>Update the hero section with a new tagline: "Designing
+experiences that matter." Then push the changes to GitHub
+so the live page updates.</code>
+    </div>
+
+    <p>Claude will edit the file, commit the change, and push it. The live page updates automatically within a minute.</p>
   </div>
 
   <!-- ================================ -->

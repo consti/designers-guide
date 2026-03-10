@@ -611,6 +611,7 @@
       <li><a href="#first-app">แอปแรก</a></li>
       <li><a href="#figma">Figma → Code</a></li>
       <li><a href="#tips">เคล็ดลับ</a></li>
+      <li><a href="#static">Static Pages</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="index.html" class="lang-switch">🇬🇧 English</a></li>
     </ul>
@@ -983,6 +984,170 @@ breathing room"</span></code>
       <h3>บอก Claude ให้เริ่มใหม่ได้</h3>
     </div>
     <p>ถ้าหน้าจอไหนไม่ถูกใจ บอกได้เลยว่า <em>"let's scrap the profile screen and rebuild it from scratch"</em> Claude ไม่ว่าหรอก</p>
+  </div>
+
+  <!-- ================================ -->
+  <!-- BONUS: STATIC PAGES -->
+  <!-- ================================ -->
+  <h2 id="static">โบนัส: สร้าง Static Page แล้วเผยแพร่</h2>
+
+  <p>ไม่จำเป็นต้องใช้ Expo ทุกครั้ง Claude สร้างหน้า HTML แบบ Standalone ได้ด้วย — หน้า Landing Page, Case Study, Portfolio, เอกสารงานออกแบบ — แล้วเผยแพร่บนเว็บฟรีด้วย GitHub Pages จริงๆ แล้วหน้าที่คุณกำลังอ่านนี้ก็สร้างแบบนี้เหมือนกัน</p>
+
+  <!-- Step 11 -->
+  <div class="step" data-step="11">
+    <div class="step-header">
+      <span class="step-number">11</span>
+      <h3>ติดตั้ง GitHub CLI</h3>
+    </div>
+    <p>GitHub คือที่ที่หน้าเว็บของคุณจะถูกโฮสต์ CLI (command-line interface) ให้ Claude สร้าง Repo และ Deploy หน้าเว็บได้โดยไม่ต้องออกจาก Terminal</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">brew install gh</span></code>
+    </div>
+
+    <p>จากนั้นล็อกอินบัญชี GitHub:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">gh auth login</span></code>
+    </div>
+
+    <p>มันจะถามคำถามไม่กี่ข้อ เลือก:</p>
+    <ul class="checklist">
+      <li><strong>GitHub.com</strong> (ไม่ใช่ Enterprise)</li>
+      <li><strong>HTTPS</strong> เป็น Protocol</li>
+      <li><strong>Login with a web browser</strong> เมื่อถามวิธียืนยันตัวตน</li>
+    </ul>
+
+    <p>ทำตามขั้นตอน — มันจะเปิดเบราว์เซอร์เพื่ออนุญาตการเชื่อมต่อ</p>
+
+    <div class="callout callout-info">
+      <span class="callout-label">ยังไม่มีบัญชี GitHub?</span>
+      ไปที่ <strong>github.com</strong> แล้วสมัครบัญชีฟรี ใช้เวลาแค่ 2 นาที คุณต้องใช้มันเพื่อเผยแพร่หน้าเว็บ
+    </div>
+  </div>
+
+  <!-- Step 12 -->
+  <div class="step" data-step="12">
+    <div class="step-header">
+      <span class="step-number">12</span>
+      <h3>สร้างโปรเจกต์ Static Page</h3>
+    </div>
+    <p>สร้างโฟลเดอร์ใหม่แล้วเริ่ม Claude:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="comment"># สร้างโฟลเดอร์สำหรับหน้าเว็บ</span>
+<span class="prompt">$ </span><span class="command">mkdir -p ~/Prototypes/my-page</span>
+<span class="prompt">$ </span><span class="command">cd ~/Prototypes/my-page</span>
+
+<span class="comment"># เริ่ม Claude</span>
+<span class="prompt">$ </span><span class="command">claude --dangerously-skip-permissions</span></code>
+    </div>
+  </div>
+
+  <!-- Step 13 -->
+  <div class="step" data-step="13">
+    <div class="step-header">
+      <span class="step-number">13</span>
+      <h3>บอก Claude ว่าจะสร้างอะไร</h3>
+    </div>
+    <p>อธิบายหน้าเว็บที่ต้องการ Claude จะสร้างไฟล์ HTML ที่มี Style และ Interaction ครบในตัว นี่คือตัวอย่าง:</p>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude — ตัวอย่าง: หน้า Portfolio</span>
+      <code>Build a single-page portfolio site for a UI designer.
+Use a minimal, editorial style with beautiful typography.
+Include sections for: hero with name and tagline, selected
+work (use placeholder images from unsplash), about, and
+contact. Make it responsive. Everything in a single
+index.html file with inline CSS and no external dependencies.</code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude — ตัวอย่าง: Case Study</span>
+      <code>Build a case study page for a mobile app redesign project.
+Include: project overview, problem statement, process with
+before/after comparisons, key screens (use placeholder
+images), outcomes and metrics. Clean, professional layout.
+Single index.html file, no dependencies.</code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude — ตัวอย่าง: จาก Figma</span>
+      <code>Here's my Figma design for a landing page:
+https://www.figma.com/design/ABC123/Landing?node-id=1-234
+
+Build this as a static HTML page. Match the design exactly.
+Single index.html file with inline CSS. Make it responsive.
+No external dependencies.</code>
+    </div>
+
+    <p>Claude จะสร้างไฟล์ HTML ให้ ดูตัวอย่างได้โดยพิมพ์:</p>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude</span>
+      <code>Open the page in my browser so I can see it.</code>
+    </div>
+
+    <p>ปรับแต่งต่อได้เรื่อยๆ — <em>"make the hero bigger"</em>, <em>"add a dark mode toggle"</em>, <em>"change the font to something more playful"</em> — จนกว่าจะพอใจ</p>
+  </div>
+
+  <!-- Step 14 -->
+  <div class="step" data-step="14">
+    <div class="step-header">
+      <span class="step-number">14</span>
+      <h3>เผยแพร่บนเว็บด้วย GitHub Pages</h3>
+    </div>
+    <p>เมื่อพอใจกับหน้าเว็บแล้ว แค่บอก Claude ให้เผยแพร่:</p>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude</span>
+      <code>Create a GitHub repository called "my-page", push this
+project to it, and set up GitHub Pages so it's live on the
+web. Give me the URL when it's done.</code>
+    </div>
+
+    <p>Claude จะ:</p>
+    <ul class="checklist">
+      <li>สร้าง Git Repository</li>
+      <li>สร้าง Repo บนบัญชี GitHub ของคุณ</li>
+      <li>Push โค้ดขึ้นไป</li>
+      <li>เปิดใช้งาน GitHub Pages</li>
+      <li>ให้ URL ที่เข้าถึงได้</li>
+    </ul>
+
+    <p>หน้าเว็บจะเข้าถึงได้ที่ <code>https://yourusername.github.io/my-page/</code> ภายในไม่กี่นาที แชร์ลิงก์นี้ให้ใครก็ได้</p>
+
+    <div class="callout callout-success">
+      <span class="callout-label">โฮสต์ฟรี ตลอดไป</span>
+      GitHub Pages ฟรีสำหรับ Repo สาธารณะ หน้าเว็บจะออนไลน์อยู่ตลอดเท่าที่คุณเก็บ Repository ไว้ ไม่มีค่าโฮสต์ ไม่ต้องจัดการเซิร์ฟเวอร์ ไม่มีลิงก์หมดอายุ
+    </div>
+  </div>
+
+  <!-- Step 15 -->
+  <div class="step" data-step="15">
+    <div class="step-header">
+      <span class="step-number">15</span>
+      <h3>อัปเดตหน้าเว็บเมื่อไหร่ก็ได้</h3>
+    </div>
+    <p>อยากแก้ไขทีหลัง? แค่เปิดโปรเจกต์แล้วบอก Claude:</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">cd ~/Prototypes/my-page</span>
+<span class="prompt">$ </span><span class="command">claude --dangerously-skip-permissions</span></code>
+    </div>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude</span>
+      <code>Update the hero section with a new tagline: "Designing
+experiences that matter." Then push the changes to GitHub
+so the live page updates.</code>
+    </div>
+
+    <p>Claude จะแก้ไขไฟล์ Commit การเปลี่ยนแปลง แล้ว Push ขึ้นไป หน้าเว็บจะอัปเดตอัตโนมัติภายในไม่กี่นาที</p>
   </div>
 
   <!-- ================================ -->
