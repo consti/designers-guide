@@ -764,6 +764,27 @@
   <div class="step" data-step="5">
     <div class="step-header">
       <span class="step-number">5</span>
+      <h3>เชื่อมต่อ Claude กับ Figma</h3>
+    </div>
+    <p>ขั้นตอนนี้ให้ Claude อ่านงานออกแบบ Figma ของคุณได้โดยตรง รันคำสั่งนี้ใน Terminal (ไม่ใช่ใน Claude):</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp</span></code>
+    </div>
+
+    <p>ครั้งแรกที่ Claude ใช้ Figma มันจะเปิดหน้าเว็บขอให้คุณอนุญาตการเชื่อมต่อ กด <strong>Allow</strong> แล้วเสร็จ</p>
+
+    <div class="callout callout-info">
+      <span class="callout-label">มันทำอะไร?</span>
+      คำสั่งนี้เพิ่ม Figma MCP (Model Context Protocol) server ให้ Claude หมายความว่า Claude จะดูข้างในไฟล์ Figma ของคุณได้ — อ่าน Frame, ตรวจสอบ Style, เข้าใจ Layout — แทนที่จะเดาจากภาพหน้าจอ ผลลัพธ์จะแม่นยำกว่ามาก
+    </div>
+  </div>
+
+  <!-- Step 6 -->
+  <div class="step" data-step="6">
+    <div class="step-header">
+      <span class="step-number">6</span>
       <h3>ติดตั้งเครื่องมือ iOS Simulator</h3>
     </div>
     <p>เปิด Xcode แล้วไปที่ <strong>Xcode → Settings → Platforms</strong> ตรวจสอบว่าดาวน์โหลด <strong>iOS Simulator</strong> runtime แล้ว (เช่น iOS 18.x)</p>
@@ -792,10 +813,10 @@
   <!-- ================================ -->
   <h2 id="first-app">สร้าง Prototype แรกของคุณ</h2>
 
-  <!-- Step 6 -->
-  <div class="step" data-step="6">
+  <!-- Step 7 -->
+  <div class="step" data-step="7">
     <div class="step-header">
-      <span class="step-number">6</span>
+      <span class="step-number">7</span>
       <h3>สร้างโฟลเดอร์โปรเจกต์</h3>
     </div>
     <p>คิดว่าเหมือนสร้างโฟลเดอร์ใหม่ใน Finder รันคำสั่งเหล่านี้ทีละบรรทัด:</p>
@@ -810,10 +831,10 @@
     </div>
   </div>
 
-  <!-- Step 7 -->
-  <div class="step" data-step="7">
+  <!-- Step 8 -->
+  <div class="step" data-step="8">
     <div class="step-header">
-      <span class="step-number">7</span>
+      <span class="step-number">8</span>
       <h3>เริ่ม Claude Code</h3>
     </div>
     <p>เปิด Claude ตัว flag พิเศษนี้จะให้ Claude รันคำสั่งเองได้โดยไม่ต้องขออนุญาตทุกครั้ง — ทำให้ใช้งานลื่นขึ้นมาก</p>
@@ -831,10 +852,10 @@
     <p>ตอนนี้คุณจะเห็นช่องให้พิมพ์ข้อความถึง Claude นี่คือพื้นที่ทำงานใหม่ของคุณ — คุณพูด Claude เขียนโค้ด</p>
   </div>
 
-  <!-- Step 8 -->
-  <div class="step" data-step="8">
+  <!-- Step 9 -->
+  <div class="step" data-step="9">
     <div class="step-header">
-      <span class="step-number">8</span>
+      <span class="step-number">9</span>
       <h3>บอก Claude ให้สร้างแอป Expo</h3>
     </div>
     <p>แค่คุยกับ Claude เป็นภาษาธรรมดา พิมพ์อะไรประมาณนี้:</p>
@@ -878,13 +899,13 @@ Then run it in the iOS simulator so I can see it.</code>
   <!-- ================================ -->
   <h2 id="figma">เปลี่ยนงานออกแบบ Figma เป็นหน้าจอ</h2>
 
-  <!-- Step 9 -->
-  <div class="step" data-step="9">
+  <!-- Step 10 -->
+  <div class="step" data-step="10">
     <div class="step-header">
-      <span class="step-number">9</span>
-      <h3>เชื่อมต่อ Claude กับ Figma</h3>
+      <span class="step-number">10</span>
+      <h3>สร้างหน้าจอจาก Figma</h3>
     </div>
-    <p>Claude อ่านไฟล์ Figma ของคุณได้โดยตรง ทำแบบนี้:</p>
+    <p>ตอนนี้ Claude เชื่อมต่อกับ Figma แล้ว (ขั้นตอนที่ 5) คุณสามารถส่งงานออกแบบให้ Claude ได้เลย:</p>
 
     <p><strong>a)</strong> ใน Figma เปิดไฟล์ที่มีงานออกแบบ คลิกขวาที่ Frame ที่ต้องการสร้าง แล้วเลือก <strong>Copy link</strong></p>
 
@@ -901,18 +922,13 @@ Use realistic mock data for any content. No real API calls —
 keep everything local and working offline.</code>
     </div>
 
-    <div class="callout callout-info">
-      <span class="callout-label">เชื่อมต่อ Figma ครั้งแรก</span>
-      ครั้งแรกที่ให้ลิงก์ Figma กับ Claude มันจะขอให้คุณยืนยันตัวตนกับ Figma ทำตามขั้นตอนในเบราว์เซอร์เพื่ออนุญาตการเชื่อมต่อ ต้องทำแค่ครั้งเดียว
-    </div>
-
-    <p>Claude จะดูงานออกแบบ Figma เข้าใจ Layout และเขียนโค้ด React Native ให้ตรงกัน iOS Simulator จะรีโหลดอัตโนมัติพร้อมหน้าจอใหม่</p>
+    <p>เพราะคุณตั้งค่าการเชื่อมต่อ Figma ไว้แล้วในขั้นตอนที่ 5 Claude จะอ่านงานออกแบบของคุณได้โดยตรง — ตรวจสอบสี, Spacing, Typography และ Layout แล้วเขียนโค้ด React Native ให้ตรงกัน iOS Simulator จะรีโหลดอัตโนมัติพร้อมหน้าจอใหม่</p>
   </div>
 
-  <!-- Step 10 -->
-  <div class="step" data-step="10">
+  <!-- Step 11 -->
+  <div class="step" data-step="11">
     <div class="step-header">
-      <span class="step-number">10</span>
+      <span class="step-number">11</span>
       <h3>ปรับแต่งงานออกแบบ</h3>
     </div>
     <p>ตรงนี้แหละที่สนุก แค่คุยกับ Claude ต่อ:</p>
@@ -993,10 +1009,10 @@ breathing room"</span></code>
 
   <p>ไม่จำเป็นต้องใช้ Expo ทุกครั้ง Claude สร้างหน้า HTML แบบ Standalone ได้ด้วย — หน้า Landing Page, Case Study, Portfolio, เอกสารงานออกแบบ — แล้วเผยแพร่บนเว็บฟรีด้วย GitHub Pages จริงๆ แล้วหน้าที่คุณกำลังอ่านนี้ก็สร้างแบบนี้เหมือนกัน</p>
 
-  <!-- Step 11 -->
-  <div class="step" data-step="11">
+  <!-- Step 12 -->
+  <div class="step" data-step="12">
     <div class="step-header">
-      <span class="step-number">11</span>
+      <span class="step-number">12</span>
       <h3>ติดตั้ง GitHub CLI</h3>
     </div>
     <p>GitHub คือที่ที่หน้าเว็บของคุณจะถูกโฮสต์ CLI (command-line interface) ให้ Claude สร้าง Repo และ Deploy หน้าเว็บได้โดยไม่ต้องออกจาก Terminal</p>
@@ -1028,10 +1044,10 @@ breathing room"</span></code>
     </div>
   </div>
 
-  <!-- Step 12 -->
-  <div class="step" data-step="12">
+  <!-- Step 13 -->
+  <div class="step" data-step="13">
     <div class="step-header">
-      <span class="step-number">12</span>
+      <span class="step-number">13</span>
       <h3>สร้างโปรเจกต์ Static Page</h3>
     </div>
     <p>สร้างโฟลเดอร์ใหม่แล้วเริ่ม Claude:</p>
@@ -1047,10 +1063,10 @@ breathing room"</span></code>
     </div>
   </div>
 
-  <!-- Step 13 -->
-  <div class="step" data-step="13">
+  <!-- Step 14 -->
+  <div class="step" data-step="14">
     <div class="step-header">
-      <span class="step-number">13</span>
+      <span class="step-number">14</span>
       <h3>บอก Claude ว่าจะสร้างอะไร</h3>
     </div>
     <p>อธิบายหน้าเว็บที่ต้องการ Claude จะสร้างไฟล์ HTML ที่มี Style และ Interaction ครบในตัว นี่คือตัวอย่าง:</p>
@@ -1094,10 +1110,10 @@ No external dependencies.</code>
     <p>ปรับแต่งต่อได้เรื่อยๆ — <em>"make the hero bigger"</em>, <em>"add a dark mode toggle"</em>, <em>"change the font to something more playful"</em> — จนกว่าจะพอใจ</p>
   </div>
 
-  <!-- Step 14 -->
-  <div class="step" data-step="14">
+  <!-- Step 15 -->
+  <div class="step" data-step="15">
     <div class="step-header">
-      <span class="step-number">14</span>
+      <span class="step-number">15</span>
       <h3>เผยแพร่บนเว็บด้วย GitHub Pages</h3>
     </div>
     <p>เมื่อพอใจกับหน้าเว็บแล้ว แค่บอก Claude ให้เผยแพร่:</p>
@@ -1126,10 +1142,10 @@ web. Give me the URL when it's done.</code>
     </div>
   </div>
 
-  <!-- Step 15 -->
-  <div class="step" data-step="15">
+  <!-- Step 16 -->
+  <div class="step" data-step="16">
     <div class="step-header">
-      <span class="step-number">15</span>
+      <span class="step-number">16</span>
       <h3>อัปเดตหน้าเว็บเมื่อไหร่ก็ได้</h3>
     </div>
     <p>อยากแก้ไขทีหลัง? แค่เปิดโปรเจกต์แล้วบอก Claude:</p>
@@ -1230,7 +1246,7 @@ so the live page updates.</code>
 
   <details>
     <summary>ถ้าอยากเริ่ม Prototype ใหม่เลย?</summary>
-    <p>กลับไปขั้นตอนที่ 6 สร้างโฟลเดอร์ใหม่ใน <code>~/Prototypes/</code> แล้วเริ่มใหม่</p>
+    <p>กลับไปขั้นตอนที่ 7 สร้างโฟลเดอร์ใหม่ใน <code>~/Prototypes/</code> แล้วเริ่มใหม่</p>
   </details>
 
 </main>

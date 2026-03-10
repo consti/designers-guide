@@ -764,6 +764,27 @@
   <div class="step" data-step="5">
     <div class="step-header">
       <span class="step-number">5</span>
+      <h3>Connect Claude to Figma</h3>
+    </div>
+    <p>This lets Claude read your Figma designs directly. Run this command in Terminal (not inside Claude):</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp</span></code>
+    </div>
+
+    <p>The first time Claude uses Figma, it will open a browser window asking you to authorize the connection. Click <strong>Allow</strong> and you're done.</p>
+
+    <div class="callout callout-info">
+      <span class="callout-label">What does this do?</span>
+      This adds the Figma MCP (Model Context Protocol) server to Claude. It means Claude can look inside your Figma files — read frames, inspect styles, understand your layouts — instead of just guessing from a screenshot. Much more accurate results.
+    </div>
+  </div>
+
+  <!-- Step 6 -->
+  <div class="step" data-step="6">
+    <div class="step-header">
+      <span class="step-number">6</span>
       <h3>Install iOS simulator tools</h3>
     </div>
     <p>Open Xcode, then go to <strong>Xcode → Settings → Platforms</strong> and make sure an <strong>iOS Simulator</strong> runtime is downloaded (e.g. iOS 18.x).</p>
@@ -792,10 +813,10 @@
   <!-- ================================ -->
   <h2 id="first-app">Creating your first prototype</h2>
 
-  <!-- Step 6 -->
-  <div class="step" data-step="6">
+  <!-- Step 7 -->
+  <div class="step" data-step="7">
     <div class="step-header">
-      <span class="step-number">6</span>
+      <span class="step-number">7</span>
       <h3>Create a project folder</h3>
     </div>
     <p>Think of this as creating a new folder for your project, just like you would in Finder. Run these commands one at a time:</p>
@@ -810,10 +831,10 @@
     </div>
   </div>
 
-  <!-- Step 7 -->
-  <div class="step" data-step="7">
+  <!-- Step 8 -->
+  <div class="step" data-step="8">
     <div class="step-header">
-      <span class="step-number">7</span>
+      <span class="step-number">8</span>
       <h3>Start Claude Code</h3>
     </div>
     <p>Now launch Claude. The special flag lets Claude run commands on its own without asking you for permission each time — this makes the experience much smoother.</p>
@@ -831,10 +852,10 @@
     <p>You should now see a prompt where you can type messages to Claude. This is your new workspace — you talk, Claude codes.</p>
   </div>
 
-  <!-- Step 8 -->
-  <div class="step" data-step="8">
+  <!-- Step 9 -->
+  <div class="step" data-step="9">
     <div class="step-header">
-      <span class="step-number">8</span>
+      <span class="step-number">9</span>
       <h3>Tell Claude to create an Expo app</h3>
     </div>
     <p>Now just talk to Claude in plain English. Type something like this:</p>
@@ -878,13 +899,13 @@ Then run it in the iOS simulator so I can see it.</code>
   <!-- ================================ -->
   <h2 id="figma">Turning your Figma designs into screens</h2>
 
-  <!-- Step 9 -->
-  <div class="step" data-step="9">
+  <!-- Step 10 -->
+  <div class="step" data-step="10">
     <div class="step-header">
-      <span class="step-number">9</span>
-      <h3>Connect Claude to Figma</h3>
+      <span class="step-number">10</span>
+      <h3>Build screens from Figma</h3>
     </div>
-    <p>Claude can read your Figma files directly. Here's how to set it up:</p>
+    <p>Now that Claude is connected to Figma (step 5), you can feed it your designs directly:</p>
 
     <p><strong>a)</strong> In Figma, open the file with your designs. Right-click the frame you want to build and choose <strong>Copy link</strong>.</p>
 
@@ -901,18 +922,13 @@ Use realistic mock data for any content. No real API calls —
 keep everything local and working offline.</code>
     </div>
 
-    <div class="callout callout-info">
-      <span class="callout-label">First-time Figma connection</span>
-      The first time you give Claude a Figma link, it will ask you to authenticate with Figma. Follow the prompts in the browser to authorize the connection. You only need to do this once.
-    </div>
-
-    <p>Claude will look at the Figma design, understand the layout, and write the React Native code to match it. The iOS simulator will automatically reload with the new screen.</p>
+    <p>Because you set up the Figma connection in step 5, Claude can read your design directly — inspecting colors, spacing, typography, and layout. It will write the React Native code to match. The iOS simulator will automatically reload with the new screen.</p>
   </div>
 
-  <!-- Step 10 -->
-  <div class="step" data-step="10">
+  <!-- Step 11 -->
+  <div class="step" data-step="11">
     <div class="step-header">
-      <span class="step-number">10</span>
+      <span class="step-number">11</span>
       <h3>Iterate on the design</h3>
     </div>
     <p>Here's where it gets fun. Just keep talking to Claude:</p>
@@ -993,10 +1009,10 @@ breathing room"</span></code>
 
   <p>You don't need Expo for everything. Claude can also build standalone HTML pages — landing pages, case studies, portfolios, design documentation — and publish them to the web for free using GitHub Pages. This is actually how the page you're reading right now was made.</p>
 
-  <!-- Step 11 -->
-  <div class="step" data-step="11">
+  <!-- Step 12 -->
+  <div class="step" data-step="12">
     <div class="step-header">
-      <span class="step-number">11</span>
+      <span class="step-number">12</span>
       <h3>Install GitHub CLI</h3>
     </div>
     <p>GitHub is where your page will be hosted. The CLI (command-line interface) lets Claude create repos and deploy pages for you without leaving the terminal.</p>
@@ -1028,10 +1044,10 @@ breathing room"</span></code>
     </div>
   </div>
 
-  <!-- Step 12 -->
-  <div class="step" data-step="12">
+  <!-- Step 13 -->
+  <div class="step" data-step="13">
     <div class="step-header">
-      <span class="step-number">12</span>
+      <span class="step-number">13</span>
       <h3>Create a static page project</h3>
     </div>
     <p>Create a new folder and start Claude in it:</p>
@@ -1047,10 +1063,10 @@ breathing room"</span></code>
     </div>
   </div>
 
-  <!-- Step 13 -->
-  <div class="step" data-step="13">
+  <!-- Step 14 -->
+  <div class="step" data-step="14">
     <div class="step-header">
-      <span class="step-number">13</span>
+      <span class="step-number">14</span>
       <h3>Tell Claude what to build</h3>
     </div>
     <p>Describe the page you want. Claude will create a self-contained HTML file with all styles and interactions built in. Here are some ideas:</p>
@@ -1094,10 +1110,10 @@ No external dependencies.</code>
     <p>Keep iterating — <em>"make the hero bigger"</em>, <em>"add a dark mode toggle"</em>, <em>"change the font to something more playful"</em> — until you're happy with it.</p>
   </div>
 
-  <!-- Step 14 -->
-  <div class="step" data-step="14">
+  <!-- Step 15 -->
+  <div class="step" data-step="15">
     <div class="step-header">
-      <span class="step-number">14</span>
+      <span class="step-number">15</span>
       <h3>Publish it to the web with GitHub Pages</h3>
     </div>
     <p>Once you're happy with the page, just tell Claude to publish it:</p>
@@ -1126,10 +1142,10 @@ web. Give me the URL when it's done.</code>
     </div>
   </div>
 
-  <!-- Step 15 -->
-  <div class="step" data-step="15">
+  <!-- Step 16 -->
+  <div class="step" data-step="16">
     <div class="step-header">
-      <span class="step-number">15</span>
+      <span class="step-number">16</span>
       <h3>Update your page anytime</h3>
     </div>
     <p>Want to make changes later? Just open the project and tell Claude what to change:</p>
@@ -1230,7 +1246,7 @@ so the live page updates.</code>
 
   <details>
     <summary>What if I want to start a completely new prototype?</summary>
-    <p>Go back to step 6. Create a new folder inside <code>~/Prototypes/</code> and start fresh.</p>
+    <p>Go back to step 7. Create a new folder inside <code>~/Prototypes/</code> and start fresh.</p>
   </details>
 
 </main>
