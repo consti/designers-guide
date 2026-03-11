@@ -1022,6 +1022,36 @@ breathing room"</span></code>
     <p>If a screen isn't working out, it's totally fine to say <em>"let's scrap the profile screen and rebuild it from scratch."</em> Claude won't mind.</p>
   </div>
 
+  <div class="step">
+    <div class="step-header">
+      <span class="step-number">→</span>
+      <h3>Share your prototype with others via tunnel</h3>
+    </div>
+    <p>Want someone else to see your prototype on their phone — without building or deploying anything? Expo can create a public tunnel that lets anyone open your app via a link.</p>
+
+    <p>First, install the tunneling tool (one time only):</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">npm i -g @expo/ngrok</span></code>
+    </div>
+
+    <p>Then tell Claude to start the app with tunneling:</p>
+
+    <div class="code-block">
+      <span class="code-label">You → Claude</span>
+      <code>Start the app with tunnel mode so I can share it
+with someone on another device.</code>
+    </div>
+
+    <p>Claude will run <code>npx expo start --tunnel</code>, which generates a public URL. The other person needs the <strong>Expo Go</strong> app on their phone (free on the App Store) — they scan the QR code or open the URL, and your prototype loads on their device.</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Good to know</span>
+      Tunneling is slower than the simulator since it routes through the internet. It works best for quick demos, not all-day testing. Your Mac needs to stay on and running the tunnel while others are viewing.
+    </div>
+  </div>
+
   <!-- ================================ -->
   <!-- SLASH COMMANDS -->
   <!-- ================================ -->
@@ -1297,7 +1327,7 @@ so the live page updates.</code>
 
   <details>
     <summary>How do I share the prototype with others?</summary>
-    <p>The easiest way is a screen recording — use Cmd+Shift+5 on macOS to record the simulator. For sharing a build others can install, ask Claude about Expo's EAS Build or TestFlight.</p>
+    <p>Three options: <strong>Screen recording</strong> — use Cmd+Shift+5 on macOS to record the simulator. <strong>Expo tunnel</strong> — run <code>npx expo start --tunnel</code> (see the tip above) to let others open your prototype on their phone in real time via Expo Go. <strong>Installable build</strong> — ask Claude about Expo's EAS Build or TestFlight for a build others can install without your Mac running.</p>
   </details>
 
   <details>

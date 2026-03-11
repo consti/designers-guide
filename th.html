@@ -1022,6 +1022,36 @@ breathing room"</span></code>
     <p>ถ้าหน้าจอไหนไม่ถูกใจ บอกได้เลยว่า <em>"let's scrap the profile screen and rebuild it from scratch"</em> Claude ไม่ว่าหรอก</p>
   </div>
 
+  <div class="step">
+    <div class="step-header">
+      <span class="step-number">→</span>
+      <h3>แชร์ Prototype ให้คนอื่นดูผ่าน Tunnel</h3>
+    </div>
+    <p>อยากให้คนอื่นดู Prototype บนมือถือของเขา — โดยไม่ต้อง Build หรือ Deploy? Expo สร้าง Tunnel สาธารณะที่ให้ใครก็ได้เปิดแอปผ่านลิงก์ได้</p>
+
+    <p>ติดตั้งเครื่องมือ Tunnel ก่อน (ครั้งเดียว):</p>
+
+    <div class="code-block">
+      <span class="code-label">Terminal</span>
+      <code><span class="prompt">$ </span><span class="command">npm i -g @expo/ngrok</span></code>
+    </div>
+
+    <p>จากนั้นบอก Claude ให้เริ่มแอปพร้อม Tunnel:</p>
+
+    <div class="code-block">
+      <span class="code-label">คุณ → Claude</span>
+      <code>Start the app with tunnel mode so I can share it
+with someone on another device.</code>
+    </div>
+
+    <p>Claude จะรัน <code>npx expo start --tunnel</code> ซึ่งจะสร้าง URL สาธารณะ คนอื่นต้องมีแอป <strong>Expo Go</strong> บนมือถือ (ฟรีบน App Store) — แค่สแกน QR Code หรือเปิด URL แล้ว Prototype ก็จะโหลดบนเครื่องของเขา</p>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">ข้อควรรู้</span>
+      Tunneling จะช้ากว่า Simulator เพราะต้องผ่านอินเทอร์เน็ต เหมาะสำหรับโชว์สั้นๆ ไม่ใช่ทดสอบทั้งวัน Mac ต้องเปิดและรัน Tunnel อยู่ตลอดที่คนอื่นกำลังดู
+    </div>
+  </div>
+
   <!-- ================================ -->
   <!-- SLASH COMMANDS -->
   <!-- ================================ -->
@@ -1297,7 +1327,7 @@ so the live page updates.</code>
 
   <details>
     <summary>แชร์ Prototype ให้คนอื่นยังไง?</summary>
-    <p>วิธีง่ายสุดคืออัดหน้าจอ — ใช้ Cmd+Shift+5 บน macOS เพื่ออัด Simulator ถ้าต้องการแชร์ Build ที่คนอื่นติดตั้งได้ ถาม Claude เกี่ยวกับ EAS Build ของ Expo หรือ TestFlight</p>
+    <p>มี 3 วิธี: <strong>อัดหน้าจอ</strong> — ใช้ Cmd+Shift+5 บน macOS เพื่ออัด Simulator <strong>Expo Tunnel</strong> — รัน <code>npx expo start --tunnel</code> (ดูเคล็ดลับด้านบน) ให้คนอื่นเปิด Prototype บนมือถือแบบเรียลไทม์ผ่าน Expo Go <strong>Build ที่ติดตั้งได้</strong> — ถาม Claude เกี่ยวกับ EAS Build ของ Expo หรือ TestFlight</p>
   </details>
 
   <details>
