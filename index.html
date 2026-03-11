@@ -1358,11 +1358,15 @@ document.addEventListener('DOMContentLoaded', () => {
     h2.appendChild(link);
   });
 
-  // Add IDs and # links to step h3 headings
-  document.querySelectorAll('.step[data-step] h3').forEach(h3 => {
+  // Add IDs and # links to all step h3 headings
+  document.querySelectorAll('.step h3').forEach(h3 => {
     const step = h3.closest('.step');
-    const num = step.dataset.step;
-    const id = 'step-' + num;
+    let id;
+    if (step.dataset.step) {
+      id = 'step-' + step.dataset.step;
+    } else {
+      id = slugify(h3.textContent);
+    }
     step.id = id;
     const link = document.createElement('a');
     link.className = 'anchor-link';
