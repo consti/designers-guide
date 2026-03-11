@@ -1088,6 +1088,19 @@ with someone on another device.</code>
     <p>Type <code>/help</code> to see the full list of slash commands. You won't need most of them, but it's good to know it's there.</p>
   </div>
 
+  <div class="step">
+    <div class="step-header">
+      <span class="step-number">/</span>
+      <h3><code>/btw</code> — Ask a quick side question</h3>
+    </div>
+    <p>Need a quick answer while Claude is working? Type <code>/btw</code> followed by your question. It pops up in an overlay, answers from what Claude already knows about your conversation, and disappears when you press <kbd>Esc</kbd>. It doesn't interrupt the main task and doesn't add to your conversation history.</p>
+
+    <div class="callout callout-tip">
+      <span class="callout-label">When to use /btw vs. a normal message</span>
+      Use <code>/btw</code> for quick factual lookups from the current session — "what was that file called?" or "what port is the dev server on?". If you need Claude to read files, run commands, or have a back-and-forth discussion, just type a normal message instead.
+    </div>
+  </div>
+
   <!-- ================================ -->
   <!-- BONUS: STATIC PAGES -->
   <!-- ================================ -->
@@ -1313,6 +1326,11 @@ so the live page updates.</code>
   <details>
     <summary>What if Claude gets stuck or the app crashes?</summary>
     <p>Just describe what you see. Say something like: <em>"The app crashed and I see a red error screen that says TypeError"</em> or <em>"The simulator is just showing a white screen."</em> Claude can usually figure it out and fix it.</p>
+  </details>
+
+  <details>
+    <summary>Expo Go says it needs a newer version, but there's no update in the App Store?</summary>
+    <p>This happens when your project uses a newer Expo SDK (e.g. SDK 55) than the version of Expo Go available in the App Store. Install the latest Expo Go beta via TestFlight: <a href="https://testflight.apple.com/join/GZJxxfUU" target="_blank" rel="noopener">testflight.apple.com/join/GZJxxfUU</a>. The TestFlight version supports the newest SDK before it hits the App Store.</p>
   </details>
 
   <details>

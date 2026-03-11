@@ -1088,6 +1088,19 @@ with someone on another device.</code>
     <p>พิมพ์ <code>/help</code> เพื่อดูรายการคำสั่ง Slash ทั้งหมด คุณไม่จำเป็นต้องใช้ส่วนใหญ่ แต่ดีที่รู้ว่ามี</p>
   </div>
 
+  <div class="step">
+    <div class="step-header">
+      <span class="step-number">/</span>
+      <h3><code>/btw</code> — ถามคำถามเร็วๆ ระหว่างทาง</h3>
+    </div>
+    <p>ต้องการคำตอบเร็วๆ ขณะที่ Claude กำลังทำงาน? พิมพ์ <code>/btw</code> ตามด้วยคำถาม จะปรากฏเป็น Overlay ตอบจากสิ่งที่ Claude รู้แล้วในการสนทนา แล้วหายไปเมื่อกด <kbd>Esc</kbd> ไม่รบกวนงานหลัก และไม่เพิ่มในประวัติการสนทนา</p>
+
+    <div class="callout callout-tip">
+      <span class="callout-label">ใช้ /btw ตอนไหนดี?</span>
+      ใช้ <code>/btw</code> สำหรับคำถามข้อเท็จจริงเร็วๆ จากเซสชันปัจจุบัน — "ไฟล์นั้นชื่ออะไร?" หรือ "Dev server ใช้ port อะไร?" ถ้าต้องการให้ Claude อ่านไฟล์ รันคำสั่ง หรือคุยกันไปมา ให้พิมพ์ข้อความปกติแทน
+    </div>
+  </div>
+
   <!-- ================================ -->
   <!-- BONUS: STATIC PAGES -->
   <!-- ================================ -->
@@ -1313,6 +1326,11 @@ so the live page updates.</code>
   <details>
     <summary>ถ้า Claude ติดหรือแอปพัง?</summary>
     <p>แค่อธิบายสิ่งที่เห็น เช่น: <em>"The app crashed and I see a red error screen that says TypeError"</em> หรือ <em>"The simulator is just showing a white screen"</em> Claude มักจะหาทางแก้ได้</p>
+  </details>
+
+  <details>
+    <summary>Expo Go บอกว่าต้องอัปเดตเวอร์ชันใหม่ แต่ไม่มีในApp Store?</summary>
+    <p>เกิดขึ้นเมื่อโปรเจกต์ใช้ Expo SDK เวอร์ชันใหม่กว่า (เช่น SDK 55) ที่ยังไม่มีใน App Store ให้ติดตั้ง Expo Go เวอร์ชัน Beta ผ่าน TestFlight: <a href="https://testflight.apple.com/join/GZJxxfUU" target="_blank" rel="noopener">testflight.apple.com/join/GZJxxfUU</a> เวอร์ชัน TestFlight รองรับ SDK ใหม่ก่อนที่จะขึ้น App Store</p>
   </details>
 
   <details>
